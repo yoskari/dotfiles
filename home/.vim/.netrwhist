@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/oskari/Downloads/MiUnlockTool/bin/mozilla'
+let g:netrw_dirhist_9='/home/oskari/p/arch_config'
+let g:netrw_dirhist_8='/home/oskari/.config/sxhkd'
+let g:netrw_dirhist_7='/home/oskari/.config/bspwm'
+let g:netrw_dirhist_6='/home/oskari/p/python/ot_harjoitustyo/src'
+let g:netrw_dirhist_5='/home/oskari/p/python/ot_harjoitustyo'
+let g:netrw_dirhist_4='/home/oskari/.config/polybar'
+let g:netrw_dirhist_3='/home/oskari/p/ot_harjoitustyo'
+let g:netrw_dirhist_2='/home/oskari/p/vacdec'
+let g:netrw_dirhist_1='/home/oskari/.config/kitty'

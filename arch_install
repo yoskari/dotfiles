@@ -1,0 +1,10 @@
+#!/bin/bash
+set -o
+sudo pacman -S openbox picom alacritty xsecurelock feh dunst libnotify neovim
+
+git clone https://aur.archlinux.org/yay.git /tmp/yay/
+pwd=`pwd`
+cd /tmp/yay/
+makepkg -si
+cd $pwd
+yay -S vim-gruvbox brave-bin polybar

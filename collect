@@ -1,0 +1,36 @@
+#!/bin/bash
+config=(
+    openbox
+    alacritty.yml
+    polybar
+    rofi
+    dunst
+    nvim
+)
+
+home=(
+    .bashrc
+    .vim
+    .vimrc
+)
+
+scripts=(
+    weather.sh
+    lock.sh
+    nmgui
+    random_wallpaper
+)
+
+for thing in "${config[@]}"; do
+    cp -r $HOME/.config/$thing config/
+done
+
+for thing in "${home[@]}"; do
+    cp -r $HOME/$thing home/
+done
+
+for thing in "${scripts[@]}"; do
+    cp -r $HOME/scripts/$thing scripts/
+done
+
+cp $HOME/.local/share/nvim/site/autoload/plug.vim plug.vim

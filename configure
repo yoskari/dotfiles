@@ -1,0 +1,6 @@
+shopt -s dotglob
+cp -r home/* $HOME
+cp -r config/* $HOME/.config
+cp -r scripts/ $HOME/scripts
+
+cp plug.vim $HOME/.local/share/nvim/site/autoload/plug.vim
