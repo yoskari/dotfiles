@@ -277,7 +277,6 @@
         <direction>north</direction>
       </action>
     </keybind>
-
     <keybind key="W-A-l">
       <action name="ResizeRelative">
         <right>100</right>
@@ -298,7 +297,6 @@
         <bottom>-100</bottom>
       </action>
     </keybind>
-
     <!-- Keybindings for running applications -->
     <keybind key="W-w">
       <action name="Execute">
@@ -306,7 +304,7 @@
           <enabled>true</enabled>
           <name>Brave</name>
         </startupnotify>
-        <command>brave</command>
+        <command>brave-browser</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -319,7 +317,6 @@
         <command>rofi -modi drun,run -show drun</command>
       </action>
     </keybind>
-
     <!-- audio on brightness controls on laptops -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
@@ -341,19 +338,28 @@
         <command>pactl set-sink-volume @DEFAULT_SINK@ -10%</command>
       </action>
     </keybind>
-
+    <keybind key="C-Up">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ +10%</command>
+      </action>
+    </keybind>
+    <keybind key="C-Down">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ -10%</command>
+      </action>
+    </keybind>
     <!-- some custom stuff -->
     <keybind key="W-A-r">
       <action name="Reconfigure">
       </action>
     </keybind>
-    <keybind key="W-A-e">
+    <keybind key="W-A-q">
       <action name="Exit">
       </action>
     </keybind>
     <keybind key="W-A-0">
       <action name="Execute">
-          <command>sh ~/scripts/lock.sh</command>
+        <command>sh ~/scripts/lock.sh</command>
       </action>
     </keybind>
   </keyboard>
