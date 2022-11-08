@@ -46,8 +46,8 @@ autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype make setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype rust setlocal keywordprg=rusty-man colorcolumn=100
 au BufReadPost *.lox set syntax=javascript
-au BufReadPost *.ec set syntax=rust
-au BufReadPost *.e set syntax=javascript expandtab tabstop=2 shiftwidth=2 softtabstop=2
+" au BufReadPost *.ec set syntax=rust
+" au BufReadPost *.e set syntax=javascript expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 autocmd VimEnter * hi Normal ctermbg=none
 
