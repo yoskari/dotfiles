@@ -1,5 +1,5 @@
 #!/bin/sh
-dir=$HOME/Pictures/good/
+dir=$HOME/Images/wallpapers/
 wallpaper=$(ls $dir | shuf | head -1)
 echo $wallpaper
 feh --bg-fill $dir/$wallpaper

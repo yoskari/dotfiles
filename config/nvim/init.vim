@@ -11,6 +11,7 @@ Plug 'vim-syntastic/syntastic'
 " Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'justinmk/vim-syntax-extra'
 
 call plug#end()
 
@@ -35,14 +36,18 @@ set undodir=$HOME/.vim/undodir
 set undofile
 set nohls
 set mouse=a
+set autochdir
 
 " language specific tab widths etc
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yacc setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype make setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype rust setlocal keywordprg=rusty-man colorcolumn=100
-
+au BufReadPost *.lox set syntax=javascript
+au BufReadPost *.ec set syntax=rust
+au BufReadPost *.e set syntax=javascript expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 autocmd VimEnter * hi Normal ctermbg=none
 
@@ -74,6 +79,8 @@ nnoremap <leader><S-TAB> :bp<CR>
 " indent with only one arrow
 nnoremap < <<
 nnoremap > >>
+nnoremap n nzz
+nnoremap N Nzz
 " keep visual mode when inventing
 vnoremap < <gv
 vnoremap > >gv

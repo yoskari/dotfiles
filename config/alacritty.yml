@@ -185,7 +185,7 @@ colors: *gruvbox_alt
   #TERM: alacritty
 
 window:
-  opacity: 0.9
+  opacity: 1.0
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -237,7 +237,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: Terminal
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
@@ -255,10 +255,10 @@ window:
   # and `light`. Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
 
-#scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 100000
 
   # Scrolling distance multiplier.
   #multiplier: 3
@@ -312,7 +312,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 6
+  size: 8
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

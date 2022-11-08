@@ -16,11 +16,12 @@
 #
 #xfce-mcs-manager &
 setxkbmap fi
-picom --experimental-backends &
+setxkbmap -option caps:escape
+#picom --experimental-backends &
 sh $HOME/scripts/random_wallpaper &
 xautolock -locker /home/oskari/lock.sh &
-$HOME/.config/polybar/launch.sh &
+#$HOME/.config/polybar/launch.sh &
+tint2 &
 nm-applet &
-xset s 300 5
+xset s 300 5 &
 xss-lock -n /usr/lib/xsecurelock/dimmer -- $HOME/scripts/lock.sh &
-sh $HOME/scripts/script_deamon &

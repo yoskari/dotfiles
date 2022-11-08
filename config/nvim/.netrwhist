@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/oskari/p/st/.git'
+let g:netrw_dirhist_4='/home/oskari/p/st'
+let g:netrw_dirhist_3='/home/oskari/p/kaikki/misc/mirrors/patentdownloader/foobar/application/multipagepdf/2007'
+let g:netrw_dirhist_2='/home/oskari/p/kaikki/misc/mirrors/wikimedia_downloader'
+let g:netrw_dirhist_1='/home/oskari/p/wikitextprocessor'
+let g:netrw_dirhist_0='/home/oskari/scripts/tuntikirjanpito'
+let g:netrw_dirhist_9='/home/oskari/scripts'
+let g:netrw_dirhist_8='/home/oskari'
+let g:netrw_dirhist_7='/home/oskari/scripts'
+let g:netrw_dirhist_6='/home/oskari/p/kaikki/library/kaikki_lib/kaikki_lib'
