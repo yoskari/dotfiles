@@ -1,8 +1,10 @@
-# My personal dotfilfes
+# My dotfiles
+
+![preview](preview.png)
 
 * wm: openbox
 * compositor: picom
-* panel: polybar
+* panel: tint2
 * terminal: alacritty
 * lockscreen: xsecurelock
 * wallpaper: feh

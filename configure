@@ -3,4 +3,8 @@ cp -r home/* $HOME
 cp -r config/* $HOME/.config
 cp -r scripts/ $HOME/scripts
 
+mkdir -p $HOME/.local/share/nvim/site/autoload/
 cp plug.vim $HOME/.local/share/nvim/site/autoload/plug.vim
+
+mkdir -p $HOME/.themes
+cp -r gruvbox-openbox $HOME/.themes/gruvbox-openbox

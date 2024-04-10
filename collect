@@ -34,3 +34,5 @@ for thing in "${scripts[@]}"; do
 done
 
 cp $HOME/.local/share/nvim/site/autoload/plug.vim plug.vim
+
+cp -r $HOME/.themes/gruvbox-openbox .
