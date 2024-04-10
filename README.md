@@ -1,7 +1,5 @@
 # My dotfiles
 
-![preview](preview.png)
-
 * wm: openbox
 * compositor: picom
 * panel: tint2
@@ -11,3 +9,5 @@
 * browser: brave
 * notifications: dunst, libnotify
 * text editor: neovim
+
+![preview](preview.png)

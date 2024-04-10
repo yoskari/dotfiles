@@ -8,3 +8,5 @@ cp plug.vim $HOME/.local/share/nvim/site/autoload/plug.vim
 
 mkdir -p $HOME/.themes
 cp -r gruvbox-openbox $HOME/.themes/gruvbox-openbox
+
+sudo cp fi_custom /usr/share/X11/xkb/symbols/fi_custom
