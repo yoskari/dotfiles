@@ -18,11 +18,14 @@ syn match     ecPanic       "\<panic\(\w\)*!" contained
 syn keyword   ecKeyword     break
 syn keyword   ecKeyword     box nextgroup=ecBoxPlacement skipwhite skipempty
 syn keyword   ecKeyword     continue
-syn keyword   ecKeyword     extern nextgroup=ecExternCrate,ecObsoleteExternMod skipwhite skipempty
-syn keyword   ecKeyword     function nextgroup=ecFuncName skipwhite skipempty
-syn keyword   ecKeyword     in impl var
+syn keyword   ecKeyword     pub nextgroup=ecExternCrate,ecObsoleteExternMod skipwhite skipempty
+syn keyword   ecKeyword     fn nextgroup=ecFuncName skipwhite skipempty
+syn keyword   ecKeyword     in impl let
 syn keyword   ecKeyword     export nextgroup=ecPubScope skipwhite skipempty
-syn keyword   ecKeyword     return assert
+syn keyword   ecKeyword     return 
+syn keyword   ecKeyword     notreached 
+syn keyword   ecKeyword     assert 
+syn keyword   ecKeyword     new 
 syn keyword   ecSuper       super
 syn keyword   ecKeyword     use nextgroup=ecModPath skipwhite skipempty
 " FIXME: Scoped impl's name is also fallen in this category
@@ -60,8 +63,8 @@ syn match ecMacroVariable "$\w\+"
 syn keyword   ecReservedKeyword alignof become do offsetof priv pure sizeof typeof unsized yield abstract virtual final override macro
 
 " Built-in types {{{2
-syn keyword   ecType        Boolean UInt8 Uint16 UInt32 UInt64 UInt128 Float32
-syn keyword   ecType        Float64 Int8 Int16 Int32 Int64 Int128 String Self
+syn keyword   ecType        Boolean u8 816 u32 u64 u128 f32
+syn keyword   ecType        f64 i8 i16 i32 i64 i128 String Self
 syn keyword   ecType        Bytes, Any
 
 " Things from the libstd v1 prelude (src/libstd/prelude/v1.rs) {{{2
@@ -151,6 +154,7 @@ syn match     ecBinNumber   display "\<0b[01_]\+\%([iu]\%(size\|8\|16\|32\|64\|1
 " an identifier, which makes them integer literals with a method call or field access,
 " or by another ".", which makes them integer literals followed by the ".." token.
 " (This must go first so the others take precedence.)
+syn match	  ecFloat		display contained "\d\+f"
 syn match     ecFloat       display "\<[0-9][0-9_]*\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\|\.\)\@!"
 " To mark a number as a normal float, it must have at least one of the three things integral values don't have:
 " a decimal point and more numbers; an exponent; and a type suffix.

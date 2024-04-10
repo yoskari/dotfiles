@@ -7,11 +7,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'rust-lang/rust.vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 " Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'ravishi/vim-gnu-c'
+Plug 'farmergreg/vim-lastplace'
+Plug 'https://github.com/de-vri-es/vim-urscript'
+Plug 'LnL7/vim-nix'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -24,8 +29,8 @@ set noerrorbells
 set clipboard+=unnamedplus
 set number
 set incsearch
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smartindent
 set nowrap
 set expandtab
@@ -37,24 +42,28 @@ set undofile
 set nohls
 set mouse=a
 set autochdir
+set autoindent
+set hls
 
 " language specific tab widths etc
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype python setlocal autoindent expandtab textwidth=80 tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype urscript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype yacc setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype make setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype rust setlocal keywordprg=rusty-man colorcolumn=100
 au BufReadPost *.lox set syntax=javascript
 " au BufReadPost *.ec set syntax=rust
 " au BufReadPost *.e set syntax=javascript expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
-autocmd VimEnter * hi Normal ctermbg=none
+" autocmd VimEnter * hi Normal ctermbg=none
 
 autocmd VimEnter * hi TrailingWhitespace ctermbg=red guibg=red
 " autocmd VimEnter * call matchadd("TrailingWhitespace", '\v\s+$')
-
-
 
 " colorscheme shit
 let g:airline_theme='angr'
@@ -62,6 +71,9 @@ let g:airline_theme='angr'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:gruvbox_transparent_bg = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" disable YCM error checking
+let g:ycm_show_diagnostics_ui = 0
 set background=dark
 colorscheme gruvbox
 
@@ -72,6 +84,7 @@ if executable('rg')
 endif
 
 let mapleader = " "
+nnoremap <esc> :noh<CR><esc>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader><TAB> :bn<CR>

@@ -307,6 +307,60 @@
         <bottom>-100</bottom>
       </action>
     </keybind>
+    <keybind key="W-r" chroot="true">
+      <keybind key="l">
+        <action name="ResizeRelative">
+          <right>100</right>
+        </action>
+      </keybind>
+      <keybind key="h">
+        <action name="ResizeRelative">
+          <right>-100</right>
+        </action>
+      </keybind>
+      <keybind key="j">
+        <action name="ResizeRelative">
+          <bottom>100</bottom>
+        </action>
+      </keybind>
+      <keybind key="k">
+        <action name="ResizeRelative">
+          <bottom>-100</bottom>
+        </action>
+      </keybind>
+      <keybind key="Escape">
+        <action name="BreakChroot"/>
+      </keybind>
+    </keybind>
+    <keybind key="W-m" chroot="true">
+      <keybind key="l">
+        <action name="MoveRelative">
+          <x>200</x>
+          <y>0</y>
+        </action>
+      </keybind>
+      <keybind key="h">
+        <action name="MoveRelative">
+          <x>-200</x>
+          <y>0</y>
+        </action>
+      </keybind>
+      <keybind key="j">
+        <action name="MoveRelative">
+          <x>0</x>
+          <y>200</y>
+        </action>
+      </keybind>
+      <keybind key="k">
+        <action name="MoveRelative">
+          <x>0</x>
+          <y>-200</y>
+        </action>
+      </keybind>
+      <keybind key="Escape">
+        <action name="BreakChroot"/>
+      </keybind>
+    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-w">
       <action name="Execute">
@@ -321,6 +375,13 @@
       <action name="Execute">
         <command>alacritty</command>
       </action>
+    </keybind>
+    <keybind key="W-g">
+      <action name="Execute">
+        <command>alacritty --title cdall -e ~/scripts/cdall.sh</command>
+      </action>
+      <x>0</x>
+      <y>0</y>
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
@@ -359,9 +420,11 @@
       </action>
     </keybind>
     <!-- some custom stuff -->
+    <keybind key="W-0">
+      <action name="ToggleDecorations"/>
+    </keybind>
     <keybind key="W-A-r">
-      <action name="Reconfigure">
-      </action>
+      <action name="Reconfigure"/>
     </keybind>
     <keybind key="W-A-q">
       <action name="Exit">
@@ -369,16 +432,26 @@
     </keybind>
     <keybind key="W-A-0">
       <action name="Execute">
-        <command>sh ~/scripts/lock.sh</command>
+        <command>xset s activate</command>
       </action>
     </keybind>
     <keybind key="W-A-o">
       <action name="Execute">
-          <command>sh ~/scripts/emoticons.sh</command>
+        <command>sh ~/scripts/emoticons.sh</command>
       </action>
     </keybind>
     <keybind key="W-f">
-        <action name="ToggleMaximize"/>
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-Print">
+      <action name="Execute">
+        <command>flameshot gui -c -p ~/Screenshots/</command>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>flameshot screen -c -p ~/Screenshots/</command>
+      </action>
     </keybind>
   </keyboard>
   <mouse>
@@ -704,6 +777,19 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+    <application name="Alacritty">
+      <decor>no</decor>
+    </application>
+    <application name="Alacritty" title="cdall">
+      <position force="yes">
+        <x>40%</x>
+        <y>35%</y>
+      </position>
+      <size>
+        <x>10%</x>
+        <y>5%</y>
+      </size>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.

@@ -15,13 +15,14 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-setxkbmap fi
+#setxkbmap -layout fi_custom,ru -option grp:win_space_toggle
+setxkbmap -layout fi_custom
 setxkbmap -option caps:escape
-#picom --experimental-backends &
-sh $HOME/scripts/random_wallpaper &
-xautolock -locker /home/oskari/lock.sh &
-#$HOME/.config/polybar/launch.sh &
+picom --experimental-backends &
+#sh $HOME/scripts/random_wallpaper &
+feh --bg-fill $HOME/Pictures/wallpapers/gruvbox_irl1.png
+#xautolock -locker /home/oskari/lock.sh &
 tint2 &
 nm-applet &
-xset s 300 5 &
-xss-lock -n /usr/lib/xsecurelock/dimmer -- $HOME/scripts/lock.sh &
+xset s 600 5
+xss-lock -l -- /home/oskari/scripts/lock.sh &

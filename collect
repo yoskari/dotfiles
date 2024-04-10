@@ -1,8 +1,8 @@
 #!/bin/bash
 config=(
     openbox
-    alacritty.yml
-    polybar
+    alacritty.toml
+    tint2
     rofi
     dunst
     nvim
