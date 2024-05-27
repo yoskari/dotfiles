@@ -17,6 +17,8 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'https://github.com/de-vri-es/vim-urscript'
 Plug 'LnL7/vim-nix'
 Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -41,7 +43,7 @@ set undodir=$HOME/.vim/undodir
 set undofile
 set nohls
 set mouse=a
-set autochdir
+"set autochdir
 set autoindent
 set hls
 
@@ -85,8 +87,8 @@ endif
 
 let mapleader = " "
 nnoremap <esc> :noh<CR><esc>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>d :bd<CR>
 nnoremap <leader><TAB> :bn<CR>
 nnoremap <leader><S-TAB> :bp<CR>
 " indent with only one arrow
