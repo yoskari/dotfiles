@@ -2,7 +2,7 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+"Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'patstockwell/vim-monokai-tasty'
@@ -48,17 +48,20 @@ set autoindent
 set hls
 
 " language specific tab widths etc
-autocmd Filetype python setlocal autoindent expandtab textwidth=80 tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype urscript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype yacc setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype go setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype make setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype rust setlocal keywordprg=rusty-man colorcolumn=100
+autocmd VimEnter * autocmd Filetype python setlocal autoindent expandtab textwidth=80 tabstop=4 shiftwidth=4 softtabstop=4
+autocmd VimEnter * autocmd Filetype urscript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd VimEnter * autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd VimEnter * autocmd Filetype yacc setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd VimEnter * autocmd Filetype htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd VimEnter * autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd VimEnter * autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd VimEnter * autocmd Filetype svelte setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd VimEnter * autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd VimEnter * autocmd Filetype go setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd VimEnter * autocmd Filetype make setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd VimEnter * autocmd Filetype rust setlocal keywordprg=rusty-man colorcolumn=100
 au BufReadPost *.lox set syntax=javascript
+au BufReadPost *.qss set syntax=css
 " au BufReadPost *.ec set syntax=rust
 " au BufReadPost *.e set syntax=javascript expandtab tabstop=2 shiftwidth=2 softtabstop=2
 

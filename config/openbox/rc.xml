@@ -366,9 +366,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Brave</name>
+          <name>firefox</name>
         </startupnotify>
-        <command>brave-browser</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -376,12 +376,10 @@
         <command>alacritty</command>
       </action>
     </keybind>
-    <keybind key="W-g">
+    <keybind key="W-o">
       <action name="Execute">
-        <command>alacritty --title cdall -e ~/scripts/cdall.sh</command>
+        <command>bash /home/oskari/p/ai_projects/run.sh</command>
       </action>
-      <x>0</x>
-      <y>0</y>
     </keybind>
     <keybind key="W-p">
       <action name="Execute">

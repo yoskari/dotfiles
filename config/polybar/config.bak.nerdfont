@@ -23,7 +23,7 @@ background = #ff282828
 background-alt = #c444
 ;foreground = ${xrdb:color7:#222}
 foreground = #fbf1c7
-foreground-alt = #e78a4e
+foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -52,30 +52,29 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = "Arimo:pixelsize=12;1"
-font-0 = "Hack Nerd Font:pixelsize=12;1"
-font-1 = "NotoSans Nerd Font:pixelsize=11;1"
-font-2 = "UbuntuMono Nerd Font:pixelsize=11;1"
-font-3 = "FiraCode Nerd Font:pixelsize=11;1"
-font-4 = "Symbols Nerd Font:pixelsize=11;1"
-;font-2 = "Terminus (TTF):pixelsize=12;1"
+font-0 = "FiraCode Nerd Font Mono:pixelsize=12;1"
+font-1 = "Font Awesome 5 Free Solid:pixelsize=12;1"
+font-2 = "Terminus:pixelsize=12;1"
 ;font-0 = fixed:pixelsize=12;1
 #font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 #font-2 = siji:pixelsize=10;1
 
 modules-left = workspaces xwindow
-modules-right = weather backlight-acpi wlan eth updates vram memory cpu filesystem battery pulseaudio date powermenu
+modules-right = backlight-acpi pulseaudio wlan eth weather updates memory cpu battery date powermenu
 
 tray-position = right
 tray-padding = 2
-tray-background = ${colors.background-alt}
+;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 
 ;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -84,6 +83,29 @@ cursor-scroll = ns-resize
 type = custom/script
 exec = $HOME/.config/polybar/openbox-workspaces.sh
 interval = 0.1
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = false
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+label-dimmed-foreground = #555
+label-dimmed-underline = ${bar/top.background}
+label-dimmed-focused-background = #f00
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-occupied-underline = #555555
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-empty-foreground = #55
+;label-separator = |
+label-separator-padding = 1
+label-separator-foreground = #ffb52a
 
 [module/xwindow]
 type = internal/xwindow
@@ -111,27 +133,57 @@ interval = 25
 
 mount-0 = /
 
-format-mounted-prefix = "󰋊 "
-format-mounted-prefix-foreground = ${colors.foreground-alt}
-label-mounted = "%used%/%total%"
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
 [module/weather]
 type = custom/script
-;format-underline = 7daea3
-format-prefix = "󰖐 "
-format-prefix-foreground = ${colors.foreground-alt}
-label = %output%
+format-underline = 7daea3
 exec = /home/oskari/scripts/weather.sh
 interval = 1200
 
 [module/updates]
 type = custom/script
-format-prefix = "󰚰 "
-format-prefix-foreground = ${colors.foreground-alt}
-label = "%output% päivitystä"
-;format-underline = a9b665
+format-prefix = "Päivitykset: "
+format-underline = a9b665
 exec = apt list --upgradable 2>/dev/null | wc -l
 interval = 60
 
@@ -175,26 +227,19 @@ label = Kirkkaus: %percentage%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #ea6962
-label = %percentage:2%%
+format-underline = #ea6962
+label = CPU: %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #89b482
-label = %gb_used%/%gb_total%
+format-underline = #89b482
+label = RAM: %gb_used%/%gb_total%
 ;label = RAM: %percentage_used%%
-
-[module/vram]
-type = custom/script
-exec = $HOME/.config/polybar/vram.sh
-interval = 5
-format-prefix = "VRAM "
-format-prefix-foreground = ${colors.foreground-alt}
 
 [module/wlan]
 type = internal/network
@@ -221,18 +266,18 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = enp3s0
 interval = 3.0
 
-format-connected-prefix = "  "
+format-connected-underline = #a9b665
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-;label-connected = %local_ip%
-label-connected = ↓ %downspeed% ↑ %upspeed%
+label-connected = %local_ip%
 
-;format-disconnected = "%ifname% ei yhteyttä"
-format-disconnected = <label-disconnected>
+format-disconnected =
+;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% ei yhteyttä
+;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
@@ -245,19 +290,17 @@ date-alt = " %d.%m.%Y"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #7daea3
+format-underline = #7daea3
 
-label = "%{A1:gsimplecal:}%date% %time%%{A}"
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-format-volume-prefix = "󰕾 "
-format-volume-prefix-foreground = ${colors.foreground-alt}
-label-volume = %percentage%%
+label-volume = Ääni: %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
@@ -278,7 +321,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.background-alt}
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 click-right = pavucontrol
 
@@ -378,7 +421,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = ⏻
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}

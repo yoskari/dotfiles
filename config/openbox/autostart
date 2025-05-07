@@ -19,7 +19,8 @@ setxkbmap -option caps:escape
 picom --experimental-backends &
 sh $HOME/scripts/random_wallpaper &
 #feh --bg-fill $HOME/Pictures/wallpapers/gruvbox_irl1.png
-tint2 &
+polybar bar1 &
+lxpolkit &
 nm-applet &
 xset s 600 5
 xss-lock -l -- /home/$USER/scripts/lock.sh &

@@ -6,6 +6,7 @@ config=(
     rofi
     dunst
     nvim
+    polybar
 )
 
 home=(

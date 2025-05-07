@@ -51,10 +51,11 @@ xkb_symbols "kotoistus" {
     key <AD03> { [  e,               E,                EuroSign,              NoSymbol              ] };
     key <AD04> { [  r,               R,                r,                     R                     ] };
     key <AD05> { [  t,               T,                thorn,                 THORN                 ] };
-    key <AD06> { [  y,               Y,                y,                     Y                     ] };
-    key <AD07> { [  u,               U,                u,                     U                     ] };
+    key <AD06> { [  y,               Y,                udiaeresis,            Udiaeresis                     ] };
+    key <AD07> { [  u,               U,                udiaeresis,            Udiaeresis                     ] };
     key <AD08> { [  i,               I,                idotless,              bar                   ] };
-    key <AD09> { [  o,               O,                oe,                    OE                    ] };
+    key <AD09> { [  o,               O,                otilde,                Otilde
+	    ] };
     key <AD10> { [  p,               P,                dead_horn,             dead_hook             ] };
     key <AD11> { [  aring,           Aring,            dead_doubleacute,      dead_abovering        ] };
     key <AD12> { [  dead_diaeresis,  dead_circumflex,  dead_tilde,            dead_macron           ] };

@@ -1,3 +1,13 @@
+[scrolling]
+history = 100000
+
+[window]
+dynamic_title = true
+opacity = 0.9
+title = "Terminal"
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
 [colors.bright]
 black = "0x928374"
 blue = "0x7daea3"
@@ -24,9 +34,11 @@ foreground = "0xdfbf8e"
 
 [font]
 size = 8
-
-[font.normal]
-family = "hack"
+normal.family = "Hack Nerd Font"
+#normal.family = "terminal-font"
+#bold.family = "terminal-font"
+#italic.family = "terminal-font"
+#bold_italic.family = "terminal-font"
 
 #[gruvbox_alt.bright]
 #black = "0x928374"
@@ -250,11 +262,3 @@ family = "hack"
 #[nord.vi_mode_cursor]
 #cursor = "#d8dee9"
 #text = "#2e3440"
-
-[scrolling]
-history = 100000
-
-[window]
-dynamic_title = true
-opacity = 0.9
-title = "Alacritty"
