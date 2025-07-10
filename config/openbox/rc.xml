@@ -430,7 +430,7 @@
     </keybind>
     <keybind key="W-A-0">
       <action name="Execute">
-        <command>xset s activate</command>
+        <command>~/.config/openbox/lock.sh</command>
       </action>
     </keybind>
     <keybind key="W-A-o">

@@ -1,0 +1,5 @@
+#!/bin/sh
+dir=$HOME/Kuvat/wallpapers/
+wallpaper=$(ls $dir | shuf | head -1)
+echo $wallpaper
+feh --bg-fill $dir/$wallpaper

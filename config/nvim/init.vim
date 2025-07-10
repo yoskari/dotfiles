@@ -1,11 +1,12 @@
 call plug#begin("~/.vim/plugged")
 
 Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 "Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' },
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'patstockwell/vim-monokai-tasty'
+"Plug 'patstockwell/vim-monokai-tasty'
 Plug 'rust-lang/rust.vim'
 "Plug 'vim-syntastic/syntastic'
 " Plug 'frazrepo/vim-rainbow'
@@ -71,15 +72,14 @@ autocmd VimEnter * hi TrailingWhitespace ctermbg=red guibg=red
 " autocmd VimEnter * call matchadd("TrailingWhitespace", '\v\s+$')
 
 " colorscheme shit
-let g:airline_theme='angr'
-" let g:airline_theme='gruvbox'
+" let g:airline_theme='catppuccin'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:gruvbox_transparent_bg = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " disable YCM error checking
 let g:ycm_show_diagnostics_ui = 0
-set background=dark
 colorscheme gruvbox
 
 "au FileType c,cpp,rust call rainbow#load()

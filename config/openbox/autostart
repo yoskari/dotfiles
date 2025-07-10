@@ -16,11 +16,12 @@
 #
 setxkbmap -layout fi_custom
 setxkbmap -option caps:escape
-picom --experimental-backends &
-sh $HOME/scripts/random_wallpaper &
-#feh --bg-fill $HOME/Pictures/wallpapers/gruvbox_irl1.png
+picom &
+xrandr --output DisplayPort-0 --mode 1920x1080 --rate 144
+#sh $HOME/.config/openbox/random_wallpaper &
+feh --bg-fill $HOME/Kuvat/gruvbox_image55.png &
 polybar bar1 &
 lxpolkit &
-nm-applet &
+#nm-applet &
 xset s 600 5
-xss-lock -l -- /home/$USER/scripts/lock.sh &
+xss-lock -l -- /home/$USER/.config/openbox/lock.sh &

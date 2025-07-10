@@ -1,7 +1,7 @@
 #!/bin/bash
 config=(
     openbox
-    alacritty.toml
+    alacritty.yml
     tint2
     rofi
     dunst
@@ -10,16 +10,9 @@ config=(
 )
 
 home=(
-    .bashrc
+    #.bashrc
     .vim
     .vimrc
-)
-
-scripts=(
-    weather.sh
-    lock.sh
-    nmgui
-    random_wallpaper
 )
 
 for thing in "${config[@]}"; do
@@ -30,12 +23,4 @@ for thing in "${home[@]}"; do
     cp -r $HOME/$thing home/
 done
 
-for thing in "${scripts[@]}"; do
-    cp -r $HOME/scripts/$thing scripts/
-done
-
 cp $HOME/.local/share/nvim/site/autoload/plug.vim plug.vim
-
-cp -r $HOME/.themes/gruvbox-openbox .
-
-cp /usr/share/X11/xkb/symbols/fi_custom .
